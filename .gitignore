@@ -33,5 +33,5 @@
 
 # R
 *.Rhistory
-.Rproj.user
-preprint/wilcoxon2.tex
+*.Rproj.user
+preprint/wilcoxon.tex
