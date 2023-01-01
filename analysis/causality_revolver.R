@@ -135,9 +135,9 @@ revolver_all %>%
    xlab("Response") +
    ylab("Relative Frequency") +
    theme_bw() +
-   theme(legend.position="top") +
-   ggsave("comparison.pdf", width = 14,43, height=11,29, units = "cm")
+   theme(legend.position="top")
 
+ggsave("../preprint/comparison.pdf", width = 14.43, height=11.29, units = "cm")
 
 # p values
 revolver_all %>%
@@ -179,7 +179,7 @@ print(
    floating = FALSE,
    latex.environments = NULL,
    booktabs = TRUE,
-   file = "wilcoxon2.tex",
+   file = "../preprint/wilcoxon2.tex",
    sanitize.text.function=function(x){x},
    include.rownames = FALSE
 )
