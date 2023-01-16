@@ -5,7 +5,7 @@ library(xtable)
 
 
 # data import
-causality_revolver <- haven::read_dta("causality_revolver.dta")
+causality_revolver <- haven::read_dta("data.dta")
 sytsma_livengood_797 <- read.delim("sytsma_livengood_797.txt", comment.char = "#")
 sytsma_livengood_798 <- read.delim("sytsma_livengood_798.txt", comment.char = "#")
 
