@@ -5,7 +5,7 @@ library(xtable)
 
 
 # data import
-causality_revolver <- haven::read_dta("data.dta")
+causality_revolver <- haven::read_dta("causality_revolver_data.dta")
 sytsma_livengood_797 <- read.delim("sytsma_livengood_797.txt", comment.char = "#")
 sytsma_livengood_798 <- read.delim("sytsma_livengood_798.txt", comment.char = "#")
 
@@ -146,7 +146,7 @@ revolver_all %>%
    theme(legend.position = "top")
 
 ggsave(
-   "../preprint/figures/comparison.pdf",
+   "../analysis/causality_revolver_comparison.pdf",
    width = 14.43,
    height = 11.29,
    units = "cm"
@@ -197,7 +197,7 @@ print(
    floating = FALSE,
    latex.environments = NULL,
    booktabs = TRUE,
-   file = "../preprint/wilcoxon.tex",
+   file = "../preprint/causality_revolver_wilcoxon.tex",
    sanitize.text.function = function(x) {
       x
    },
