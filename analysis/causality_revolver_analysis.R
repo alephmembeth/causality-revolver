@@ -15,12 +15,12 @@ neutral_rev = rep(4, nrow(causality_revolver))
 
 
 # tests
-wilcox.test(x = causality_revolver$ah, mu = 4)
-wilcox.test(x = causality_revolver$bh, mu = 4)
-wilcox.test(x = causality_revolver$dh, mu = 4)
-wilcox.test(x = causality_revolver$eh, mu = 4)
-wilcox.test(x = causality_revolver$fh, mu = 4)
-wilcox.test(x = causality_revolver$gh, mu = 4)
+wilcox.test(x = causality_revolver$ah, mu = 4, alternative = "greater")
+wilcox.test(x = causality_revolver$bh, mu = 4, alternative = "greater")
+wilcox.test(x = causality_revolver$dh, mu = 4, alternative = "greater")
+wilcox.test(x = causality_revolver$eh, mu = 4, alternative = "greater")
+wilcox.test(x = causality_revolver$fh, mu = 4, alternative = "greater")
+wilcox.test(x = causality_revolver$gh, mu = 4, alternative = "greater")
 
 cliff.delta(causality_revolver$ah, neutral_rev)
 cliff.delta(causality_revolver$bh, neutral_rev)
@@ -159,8 +159,8 @@ revolver_all %>%
    dplyr::summarise(value = list(value)) %>%
    dplyr::group_by(case) %>%
    dplyr::mutate(
-      v_value = wilcox.test(unlist(value), mu = 4)$statistic,
-      p_value = wilcox.test(unlist(value), mu = 4)$p.value
+      v_value = wilcox.test(unlist(value), mu = 4, alternative = "greater")$statistic,
+      p_value = wilcox.test(unlist(value), mu = 4, alternative = "greater")$p.value
    ) %>%
    select(-value) %>%
    dplyr::ungroup() %>%
